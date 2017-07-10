@@ -36,6 +36,8 @@ public class PurpleCube : MonoBehaviour {
 	// Zugriff auf die anderen Scripte
 	CubeLocation _cubeLocation;
 
+	public AudioSource sourceFX;
+
 //-------------------------------------------------------
 
 	////////////////////////////
@@ -94,11 +96,13 @@ public class PurpleCube : MonoBehaviour {
 			switch (rotationAxis)
 			{
 			case 0: // FrontRotation
+				sourceFX.Play();
 				StartCoroutine (Animate (frontRotation));
 				rotationChangerFront();
 				break;
 
 			case 1: // LeftRotation
+				sourceFX.Play();
 				StartCoroutine(Animate(leftRotation));
 				rotationChangerLeft();
 				break;
@@ -121,11 +125,13 @@ public class PurpleCube : MonoBehaviour {
 			switch (rotationAxis)
 			{
 			case 0: // BackRotation
+				sourceFX.Play();
 				StartCoroutine(Animate (backRotation));
 				rotationChangerBack();
 				break;
 
 			case 1: // RightRotation
+				sourceFX.Play();
 				StartCoroutine(Animate(rightRotation));
 				rotationChangerRight();
 				break;

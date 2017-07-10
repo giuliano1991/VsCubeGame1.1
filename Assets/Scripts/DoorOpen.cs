@@ -18,11 +18,24 @@ public class DoorOpen : MonoBehaviour {
 		
 	}
 
-	void OnTriggerEnter (Collider other) {
+	//void OnTriggerEnter (Collider other) {
 
+	//	_Door.DoorOpen ();
+	//	Destroy (prefab);
+	//	sourceFX.Play();
+
+	//	}
+
+	void OnCollisionEnter (Collision col) {
+	
+		if (col.gameObject.name == "Sphere") 
+		{
+			
 		_Door.DoorOpen ();
 		Destroy (prefab);
 		sourceFX.Play();
 
 		}
+
+	}
 }
