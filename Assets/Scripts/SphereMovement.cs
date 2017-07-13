@@ -17,10 +17,17 @@ public class SphereMovement : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter (Collision col)
+	/*void OnCollisionEnter (Collision col)
 	{
 
 		prefab.GetComponent<Rigidbody> ().angularDrag = value;
 
+	}*/
+
+	void OnTriggerEnter (Collider other) {
+	
+		if (other.gameObject.name == "Sphere") {
+			prefab.GetComponent<Rigidbody> ().angularDrag = value;
+		}
 	}
 }
